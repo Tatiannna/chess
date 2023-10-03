@@ -1,10 +1,24 @@
-#require_relative "piece.rb"
+require_relative "piece.rb"
 
 class Board
 
     def initialize
         @rows = Array.new(8){Array.new(8)}
         #@null_piece = NullPiece
+
+
+        @rows[0].map {|x| x = Piece.new  }
+        @rows[1].map {|x| x = Piece.new  }
+
+
+        @rows[2].map {|x| x = NullPiece.new  }
+        @rows[3].map {|x| x = NullPiece.new  }
+        @rows[4].map {|x| x = NullPiece.new  }
+        @rows[5].map {|x| x = NullPiece.new  }
+
+
+        @rows[6].map {|x| x = Piece.new  }
+        @rows[7].map {|x| x = Piece.new  }
     end
 
 
