@@ -36,12 +36,29 @@ class Board
 
     def move_piece(start_pos, end_pos)
         # will need color as a parameter but excluded it for now, just for testing :)
-        
+        return nil if start_pos.piece.nil?
+            
+        piece = self[start_pos]
+        unless piece.valid_moves.include?(end_pos)
+          raise "End position is not available"
+        end
+        unless in_bounds?(end_pos)
+            raise "End position is not in bounds"
+        end
+            
+        self[start_pos] = nil
+        self[end_pos] = piece
+            
+        piece.pos = end_pos
+    
     end
 
 
     def valid_pos?(pos)
-
+        row, col = pos
+        row < grid.first.length &&
+        row >= 0 &&
+        col >= 0
     end
 
 
@@ -82,7 +99,7 @@ class Board
 
 
     def move_piece!(color, start_pos, end_pos)
-
+        
     end
 
 
