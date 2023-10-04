@@ -4,19 +4,20 @@ module Slideable
         [ [0, 1], [0, -1], [1, 0], [-1, 0]]
     end
 
-    def dl_dirs
+    def d_dirs
         [[1,1], [-1,1], [-1, -1], [1, -1]]
     end
 
     def moves
         # expects a #move_dirs method to be implemented by base class
         # returns an array of all possible moves for a given piece
-        res = []
+        moves = []
 
         move_dirs.each do |dir|
             res += grow_unblocked_moves_in_dir(dir)
         end
 
+        moves
     end
 
     def move_dirs 
