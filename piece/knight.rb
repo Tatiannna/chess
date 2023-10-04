@@ -4,7 +4,7 @@ require_relative "stepable.rb"
 class Kinght < Piece
     include Stepable
     def symbol
-        color == :black? "\u265E" : "\u2658"
+        @color == :black ? "\u265E" : "\u2658"
     end
 
 protected

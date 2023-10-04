@@ -6,7 +6,7 @@ class Bishop < Piece
     include Slideable
 
     def initialize
-        @symbol = @color == 'black' ? "\u265D" : "\u2657" 
+        @color == :black ? "\u265D" : "\u2657" 
     end
 
 
