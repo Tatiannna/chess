@@ -1,35 +1,58 @@
-require_relative "/piece/Piece.rb"
+require_relative "/piece/queen.rb"
+require_relative "/piece/king.rb"
+require_relative "/piece/bishop.rb"
+require_relative "/piece/rook.rb"
+require_relative "/piece/knight.rb"
+require_relative "/piece/pawn.rb"
+require_relative "/piece/null_piece.rb"
 
 class Board
 
+    # def initialize(color,board,pos = nil)
+
     def initialize
-        @rows = Array.new(8){Array.new(8)}
+        @grid = Array.new(8){Array.new(8)}
+
+        
         @null_piece = NullPiece.new
 
-        @rows[0].map {|x| x = Piece.new  }
-        @rows[1].map {|x| x = Pawn.new  }
+        @grid[0,0] = Rook.new("black", @grid,   )
+
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+        @grid[0].map {|x| x = Piece.new  }
+
+        @grid[1].map {|x| x = Pawn.new  }
 
 
-        @rows[2].map {|x| x = NullPiece.new  }
-        @rows[3].map {|x| x = NullPiece.new  }
-        @rows[4].map {|x| x = NullPiece.new  }
-        @rows[5].map {|x| x = NullPiece.new  }
+        (2..5).each do |x|
+            row[x].map { |y| NullPiece.instance }
+        end
+        # @grid[2].map {|x| x = NullPiece.instance }
+        # @grid[3].map {|x| x = NullPiece.instance  }
+        # @grid[4].map {|x| x = NullPiece.instance  }
+        # @grid[5].map {|x| x = NullPiece.instance  }
 
 
-        @rows[6].map {|x| x = Pawn.new  }
-        @rows[7].map {|x| x = Piece.new  }
+        @grid[6].map {|x| x = Pawn.new  }
+        @grid[7].map {|x| x = Piece.new  }
     end
 
 
     def [](pos)
         row, col = pos
-        @rows[row][col]
+        @grid[row][col]
     end
 
 
     def []=(pos, val)
         row, col = pos
-        @rows[row][col] = val
+        @grid[row][col] = val
     end
 
 

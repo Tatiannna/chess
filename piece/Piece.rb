@@ -30,5 +30,9 @@ class Piece
     #  moves mean postion change within board, which is prepresennted as a 2D array 
 
   end
+
+  def empty?
+    false
+  end
 end
 

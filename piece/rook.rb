@@ -2,13 +2,14 @@ require_relative "piece.rb"
 require_relative "slideable.rb"
 
 
-class Rook < Piecegit 
+class Rook < Piece
     include Slideable
+    
     def symbol
-        color == :black? "\u265C" : "\u2656"
+        color = black? '♖' : '♜'
     end
-private
+
     def move_dirs
-        [[0,1],[0,-1],[1,0],[-1,0]]
+        h_dirs
     end
 end

@@ -12,16 +12,6 @@ class Bishop < Piece
 
     private
     def move_dirs
-        new_positions = []
-        # @DIAGNAL_DIRS = [[1,1], [-1,1], [-1, -1], [1, -1]]
-
-        row, col = @pos 
-
-        DIAGNAL_DIRS.each do |delta|
-            dx, dy = delta
-            new_positions << row + delta, col + delta
-        end
-
-        new_positions
+        d_dirs
     end 
 end
