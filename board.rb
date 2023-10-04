@@ -4,11 +4,10 @@ class Board
 
     def initialize
         @rows = Array.new(8){Array.new(8)}
-        #@null_piece = NullPiece
-
+        @null_piece = NullPiece.new
 
         @rows[0].map {|x| x = Piece.new  }
-        @rows[1].map {|x| x = Piece.new  }
+        @rows[1].map {|x| x = Pawn.new  }
 
 
         @rows[2].map {|x| x = NullPiece.new  }
@@ -17,7 +16,7 @@ class Board
         @rows[5].map {|x| x = NullPiece.new  }
 
 
-        @rows[6].map {|x| x = Piece.new  }
+        @rows[6].map {|x| x = Pawn.new  }
         @rows[7].map {|x| x = Piece.new  }
     end
 
