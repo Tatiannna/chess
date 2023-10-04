@@ -18,10 +18,11 @@ module Slideable
 
     private
 
-    @HORIZONTAL_DIRS = []
-    @DIAGNAL_DIRS = []
+    @HORIZONTAL_DIRS = [ [0, 1], [0, -1], [1, 0], [-1, 0]] # includes vertical!
+    @DIAGNAL_DIRS = [[1,1], [-1,1], [-1, -1], [1, -1]]
 
-    def move_dirs
+    def move_dirs #overwritten by subclass
+        
 
     end
 

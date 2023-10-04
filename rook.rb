@@ -2,7 +2,7 @@ require_relative "piece.rb"
 require_relative "slideable.rb"
 
 
-class Rook < Piece
+class Rook < Piecegit 
     include Slideable
     def symbol
         color == :black? "\u265C" : "\u2656"
@@ -12,5 +12,3 @@ private
         [[0,1],[0,-1],[1,0],[-1,0]]
     end
 end
-
-# start_pos [2,3] =>[2,4][2,1]
