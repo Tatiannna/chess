@@ -1,5 +1,5 @@
 require_relative "board.rb"
-require_relative "player.rb"
+require_relative "/player/player.rb"
 
 class Game
     def initialize
@@ -14,7 +14,7 @@ class Game
     end
 
     private
-    
+
     def notify_players
     end
 
