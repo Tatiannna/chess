@@ -4,7 +4,7 @@ class Piece
 
   def initialize(color,board,pos = nil)
     @color = color
-    @board = Board.new()
+    @board = board
     @pos = pos
   end
 

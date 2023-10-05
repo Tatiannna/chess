@@ -5,7 +5,7 @@ require_relative "slideable.rb"
 class Bishop < Piece
     include Slideable
 
-    def initialize
+    def symbol
         @color == :black ? "\u265D" : "\u2657" 
     end
 

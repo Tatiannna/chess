@@ -1,7 +1,7 @@
 require_relative "piece.rb"
 require_relative "stepable.rb"
 
-class Kinght < Piece
+class Knight < Piece
     include Stepable
     def symbol
         @color == :black ? "\u265E" : "\u2658"

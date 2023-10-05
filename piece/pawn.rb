@@ -4,7 +4,7 @@ require_relative "piece.rb"
 class Pawn < Piece
 
     def symbol
-        color? == :black? "♟" : "♙"
+        color == :black ? "♟" : "♙"
     end
 
 
@@ -20,7 +20,7 @@ class Pawn < Piece
     end
 
     def forward_dir
-        color == :black? 1 : -1
+        color == :black ? 1 : -1
     end
 
     def forward_steps
