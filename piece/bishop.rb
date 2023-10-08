@@ -6,7 +6,7 @@ class Bishop < Piece
     include Slideable
 
     def symbol
-        @color == :black ? "\u265D" : "\u2657" 
+        @color == :black ? "♗"  : "♝" 
     end
 
 

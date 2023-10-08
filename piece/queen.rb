@@ -5,7 +5,7 @@ class Queen < Piece
     include Slideable
 
     def symbol
-        @color == :black ? '♛' : '♕'
+        @color == :black ? '♕' : '♛' 
     end
 
     def move_dirs
@@ -13,3 +13,7 @@ class Queen < Piece
     end
 
 end
+
+
+q = Queen.new(:white, "board", [0,0])
+puts q
