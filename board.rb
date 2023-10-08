@@ -25,24 +25,10 @@ class Board
         board[[0,6]] = Knight.new(:black, board, [0,6])
         board[[0,7]] = Rook.new(:black, board, [0,7])
 
-        board[[1,0]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,2]] = Pawn.new(:black, board, [1,1])
-        board[[1,3]] = Pawn.new(:black, board, [1,1])
-        board[[1,4]] = Pawn.new(:black, board, [1,1])
-        board[[1,5]] = Pawn.new(:black, board, [1,1])
-        board[[1,6]] = Pawn.new(:black, board, [1,1])
-        board[[1,7]] = Pawn.new(:black, board, [1,1])
-
-
-        board[[6,0]] = Pawn.new(:white, board, [6,0])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,2]] = Pawn.new(:white, board, [6,2])
-        board[[6,3]] = Pawn.new(:white, board, [6,3])
-        board[[6,4]] = Pawn.new(:white, board, [6,4])
-        board[[6,5]] = Pawn.new(:white, board, [6,5])
-        board[[6,6]] = Pawn.new(:white, board, [6,6])
-        board[[6,7]] = Pawn.new(:white, board, [6,7])
+        8.times do |col|
+            board[[1, col]] = Pawn.new(:black, board, [1, col])
+            board[[6, col]] = Pawn.new(:white, board, [6, col])
+        end
 
         board[[7,0]] = Rook.new(:white, board, [7,0])
         board[[7,1]] = Knight.new(:white, board, [7,1])
@@ -61,9 +47,7 @@ class Board
                 self[[row ,4]].to_s + self[[row, 5]].to_s + self[[row ,6]].to_s + self[[row ,7]].to_s
 
         end
-    
     end
-
 
     def [](pos)
         row, col = pos
