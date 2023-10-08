@@ -9,7 +9,7 @@ require_relative "piece/null_piece"
 class Board
 
     def initialize
-        @grid = Array.new(8){Array.new(8,NullPiece.instance)}
+        @rows = Array.new(8){Array.new(8,NullPiece.instance)}
         @null_piece = NullPiece.instance
         Board.place_pieces(self)
     end
@@ -25,25 +25,24 @@ class Board
         board[[0,6]] = Knight.new(:black, board, [0,6])
         board[[0,7]] = Rook.new(:black, board, [0,7])
 
+        board[[1,0]] = Pawn.new(:black, board, [1,1])
         board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
-        board[[1,1]] = Pawn.new(:black, board, [1,1])
+        board[[1,2]] = Pawn.new(:black, board, [1,1])
+        board[[1,3]] = Pawn.new(:black, board, [1,1])
+        board[[1,4]] = Pawn.new(:black, board, [1,1])
+        board[[1,5]] = Pawn.new(:black, board, [1,1])
+        board[[1,6]] = Pawn.new(:black, board, [1,1])
+        board[[1,7]] = Pawn.new(:black, board, [1,1])
 
 
-
+        board[[6,0]] = Pawn.new(:white, board, [6,0])
         board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
-        board[[6,1]] = Pawn.new(:white, board, [6,1])
+        board[[6,2]] = Pawn.new(:white, board, [6,2])
+        board[[6,3]] = Pawn.new(:white, board, [6,3])
+        board[[6,4]] = Pawn.new(:white, board, [6,4])
+        board[[6,5]] = Pawn.new(:white, board, [6,5])
+        board[[6,6]] = Pawn.new(:white, board, [6,6])
+        board[[6,7]] = Pawn.new(:white, board, [6,7])
 
         board[[7,0]] = Rook.new(:white, board, [7,0])
         board[[7,1]] = Knight.new(:white, board, [7,1])
@@ -55,15 +54,25 @@ class Board
         board[[7,7]] = Rook.new(:white, board, [7,7])
     end
 
+    def render
+
+        8.times do |row|
+            puts self[[row, 0]].to_s + self[[row ,1]].to_s + self[[row ,2]].to_s + self[[row ,3]].to_s + 
+                self[[row ,4]].to_s + self[[row, 5]].to_s + self[[row ,6]].to_s + self[[row ,7]].to_s
+
+        end
+    
+    end
+
 
     def [](pos)
         row, col = pos
-        @grid[row][col]
+        @rows[row][col]
     end
 
     def []=(pos, val)
         row, col = pos
-        @grid[row][col] = val
+        @rows[row][col] = val
     end
 
 
@@ -87,7 +96,7 @@ class Board
 
     def valid_pos?(pos)
         row, col = pos
-        row < grid.first.length &&
+        row < rows.first.length &&
         row >= 0 &&
         col >= 0
     end
@@ -130,6 +139,8 @@ end
 
 
 b = Board.new
-puts b
-
+#b.render
+#puts b[[0,0]] + b[[0,1]]
+#puts b[[0,1]]
+b.render
 
