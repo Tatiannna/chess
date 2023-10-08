@@ -9,13 +9,11 @@ class Piece
   end
 
   def to_s
-    color == :black ? "*" : "."
-
+    symbol
   end
 
   def valid_moves
     moves = []
-
   end
 
   def pos=(val)
@@ -30,7 +28,5 @@ class Piece
     #  moves mean postion change within board, which is prepresennted as a 2D array 
 
   end
-
-
 end
 
