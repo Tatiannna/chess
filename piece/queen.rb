@@ -13,7 +13,3 @@ class Queen < Piece
     end
 
 end
-
-
-q = Queen.new(:white, "board", [0,0])
-puts q
